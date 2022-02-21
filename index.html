@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <title> Joe's Hotdog Stand </title>
+        <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+      <h1> Welcome to Joe's Hotdog Stand! </h1>
+      <h2> Summary of your order: </h2>
+      <script language = "javascript">
+
+
+
+        var hotdog = prompt("How many hotdogs do you want?");
+        var hotdog_total = hotdog * 3.75;
+        if( hotdog > 1 ) {
+            document.write( "<h3>" +"You ordered " + hotdog + " hotdogs: "+ "$" + hotdog_total.toFixed(2) + "<br>" + "</h3>");
+            } else {
+                document.write("<h3>" + "You ordered " + hotdog + " hotdog: "+ "$" + hotdog_total.toFixed(2) + "<br>" + "</h3>");
+            }
+          
+
+        var fries = prompt("How many french fries do you want?");
+        var fries_total = fries * 2.00;
+        document.write("<h3>" + "You ordered " + fries + " french fries: "+ "$" + fries_total.toFixed(2) + "<br>" + "</h3>");
+
+
+        var soda = prompt("How many sodas do you want?");
+        var soda_total = soda * 1.80;
+        if( soda > 1 ) {
+            document.write("<h3>" + "You ordered " + soda + " sodas: "+ "$" + soda_total.toFixed(2) + "<br>" + "</h3>");
+            } else {
+                document.write("<h3>" + "You ordered " + soda + " soda: "+ "$" + soda_total.toFixed(2) + "<br>"+ "</h3>");
+            }
+
+        var subtotal = hotdog_total + fries_total + soda_total;
+        document.write("<h3>" + "Subtotal: $" + subtotal.toFixed(2) + "<br>"+ "</h3>");
+
+        
+        if( subtotal > 20 ) {
+            var discount = 0.1 * subtotal;
+            document.write("<h3>" + "You are qualified for our 10% discount, you saved $" + discount.toFixed(2) + " on this order!" + "<br>" + "</h3>");
+        }else {
+            var discount = 0;
+        }
+
+        var tax = (subtotal - discount) * 0.0625
+        document.write("<h3>" + "Tax: $" + tax.toFixed(2) + "<br>" + "</h3>");
+
+        var total = subtotal - discount + tax;
+        document.write("<h3>" + "Total: $" + total.toFixed(2) + "<br>" + "</h3>");
+
+
+      </script>
+
+    <div>
+        <img src = "Hot-Dogs.jpeg" class ="display"/>
+    </div>
+
+  </body>
+
+
+
+</html>
